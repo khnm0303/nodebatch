@@ -1,0 +1,28 @@
+{
+  "name": "nodebatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.1",
+    "fast-csv": "^4.3.6",
+    "fs": "0.0.1-security",
+    "mybatis": "0.0.1",
+    "mybatis-mapper": "^0.7.1",
+    "node-telegram-bot-api": "^0.65.1",
+    "nodemailer": "^6.9.9",
+    "oracledb": "^5.3.0",
+    "request": "^2.88.2",
+    "stream": "0.0.2",
+    "util": "^0.12.5",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  }
+}
