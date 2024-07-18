@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SCA001">
+    <update id='updateStatus'>
+        UPDATE DD_JOB 
+           SET STATUS = #{STATUS}
+               ,ERROR_MSG = #{ERRMSG}
+               ,LAST_DATE = sysdate 
+               ,LAST_USERID = 'BATCH'
+         WHERE SEQNO = #{SEQNO}
+    </update>
+    
+    <select id="ACT1">
+    SELECT A.SEQNO, A.WORK_DATE, A.BATCH_ID, B.BATCH_NM ,A.STATUS 
+            ,B.DESCRIPT ,B.MAIL  
+            ,B.P01NM ,A.PARAM01      ,B.P02NM ,A.PARAM02      ,B.P03NM ,A.PARAM03 
+            ,B.P04NM ,A.PARAM04      ,B.P05NM ,A.PARAM05      ,B.P06NM ,A.PARAM06 
+            ,B.P07NM ,A.PARAM07      ,B.P08NM ,A.PARAM08      ,B.P09NM ,A.PARAM09 
+            ,B.P10NM ,A.PARAM10 
+    FROM ( 
+            SELECT SEQNO, BATCH_ID, STATUS, PARAM01, PARAM02, PARAM03, PARAM04, PARAM05, PARAM06, PARAM07, PARAM08, PARAM09, PARAM10,
+                NVL( TO_DATE( RV_DATE||RV_TIME, 'YYYYMMDDHH24MI' ) , NVL( LAST_DATE, REG_DATE) ) AS WORK_DATE, 
+                ROW_NUMBER() OVER (ORDER BY NVL( TO_DATE( RV_DATE||RV_TIME, 'YYYYMMDDHH24MI' ) , NVL( LAST_DATE, REG_DATE) )) AS RN 
+            FROM DD_JOB 
+            WHERE STATUS = 'WAIT'
+            AND 1 <![CDATA[>]]> ( SELECT COUNT(*) FROM DWNGL_WMS.DD_JOB WHERE STATUS = 'START' ) 
+            AND NVL( TO_DATE( RV_DATE||RV_TIME, 'YYYYMMDDHH24MI' ) , NVL( LAST_DATE, REG_DATE) ) <![CDATA[<=]]> sysdate  
+        ) A , DD B 
+    WHERE A.RN = 1 
+      AND A.BATCH_ID = B.BATCH_ID 
+    </select>
+
+    <select id="003">
+    select * from dual   
+    </select>
+
+    <select id="002">
+	  select * from dual 
+	  </select>
+</mapper>
