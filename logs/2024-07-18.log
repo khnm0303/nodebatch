@@ -1,0 +1,15 @@
+2024-07-18 16:17:16 info: [/common/Download2Csv.js] Download2Csv() Start ********************************* 
+2024-07-18 16:17:21 info: [/common/Download2Csv.js] Download2Csv() END ********************************* 
+2024-07-18 16:17:21 info: [/common/Download2Csv.js ] Oracle connection closed successfully. 
+2024-07-18 16:20:05 info: [/common/Download2Csv.js] Download2Csv() Start ********************************* 
+2024-07-18 16:20:06 error: [/common/Download2Csv.js ERROR ] Error: NJS-005: invalid value for parameter 1
+2024-07-18 16:20:06 info: [/common/Download2Csv.js ] Oracle connection closed successfully. 
+2024-07-18 16:21:32 info: [/common/Download2Csv.js] Download2Csv() Start ********************************* 
+2024-07-18 16:22:14 info: [/common/Download2Csv.js] Download2Csv() END ********************************* 
+2024-07-18 16:22:14 info: [/common/Download2Csv.js ] Oracle connection closed successfully. 
+2024-07-18 16:29:59 info: [/common/Download2Csv.js] Download2Csv() Start ********************************* 
+2024-07-18 16:30:45 info: [/common/Download2Csv.js] Download2Csv() END ********************************* 
+2024-07-18 16:30:45 info: [/common/Download2Csv.js ] Oracle connection closed successfully. 
+2024-07-18 16:32:02 info: [/common/Download2Csv.js] Download2Csv() Start ********************************* 
+2024-07-18 16:32:49 info: [/common/Download2Csv.js] Download2Csv() END ********************************* 
+2024-07-18 16:32:49 info: [/common/Download2Csv.js ] Oracle connection closed successfully. 
